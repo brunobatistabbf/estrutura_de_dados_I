@@ -1,13 +1,10 @@
-public class respostado {
+public class respostafor164 {
     public static void main(String[] args) {
-        int a = 1;
-        System.out.println("Comecei");
-        while (a <= 50000)
-        {
+        int a;
+        System.out.println("Comecei! ");
+        for (a = 1; a<= 50000; a++) {
             System.out.println(a);
-            a++;
         }
         System.out.println("---- FIM ----");
     }
-
 }
