@@ -1,33 +1,39 @@
 import java.util.Scanner;
-
-public class respostafor404 {
+public class respostawhile404 {
     public static void main(String[] args) {
-       
+        
         Scanner sc = new Scanner(System.in);
         int[][] N = new int[10][10];
         int L, c, t;
-       
-        for (L = 0; L <= 9 ; L++) {
-            for ( c = 0; c <= 9; c++) {
+        L = 0;
+        c = 0;
+        while (L <= 9) {
+            while (c <= 9) {
                 System.out.println("Entre com o elemento linha: " + (L + 1) + " Coluna: " +(c + 1));
                 N[L][c] = sc.nextInt();
+                c++;
             }
+            c = 0;
+            L++;
         }
         System.out.println("Acima da diagonal principal");
-        for ( L = 0; L <= 8; L++) {
-            
-            for ( c = L+1; c <= 9 ;c++) {
-                System.out.print("\t" + N[L][c]);
-            }
-
-            System.out.println();
-
-         for ( t = 0; t <= L; t++) {
-            System.out.print("\t");
+        L = 0 ;
+        t = 0;
+        while (L <= 8) {
+           while (c <= 9) {
+            System.out.print("\t" + N[L][c]);
+            c++;
            }
+           System.out.println();
+           while (t <= L) {
+            System.out.print("\t");
+            t++;
+           }
+               
+           L++;   
+           c = L+1;
         }
 
         System.out.println();
     }
-
 }
