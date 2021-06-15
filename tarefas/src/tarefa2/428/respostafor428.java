@@ -6,7 +6,7 @@ public class respostafor428 {
         int[][] dados = new int[10][4];
         int l ;
         int codigo;
-        int pos;
+        int pos = 0;
         int aux;
         for (l = 0; l < 10; l++) {
             System.out.println("Digite a matricula no formato aascccnnn: ");
@@ -23,10 +23,10 @@ public class respostafor428 {
         System.out.println("Digite o codigo do curso: ");
         codigo = sc.nextInt();
         for ( l = 0; l < 10; l++) {
-            if (dados[L][2]==codigo && dados[L][1]==0) {
+            if (dados[l][2]==codigo && dados[l][1]==0) {
                 pos = l;
             } else {
-                if (dados [L] [3] >dados [pos][3]) {
+                if (dados [l] [3] >dados [pos][3]) {
                     pos = l;
                 }
             }
@@ -35,7 +35,7 @@ public class respostafor428 {
 
 
 
-        System.out.println("\nAluna premiada matricula: " + dados[pos][O] + " teve CR:" +dados[pos][3]);
+        System.out.println("\nAluna premiada matricula: " + dados[pos][0] + " teve CR:" +dados[pos][3]);
         System.out.println();
     }
 }

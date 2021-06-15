@@ -5,7 +5,7 @@ public class respostado428 {
         int[][] dados = new int[10][4];
         int l = 0;
         int codigo;
-        int pos;
+        int pos = 0;
         int aux;
         while (l < 10) {
             System.out.println("Digite a matricula no formato aascccnnn: ");
@@ -23,10 +23,10 @@ public class respostado428 {
         codigo = sc.nextInt();
         l=0;
         while (l < 10) {
-            if (dados[L][2]==codigo && dados[L][1]==0) {
+            if (dados[l][2]==codigo && dados[l][1]==0) {
                 pos = l;
             } else {
-                if (dados [L] [3] >dados [pos][3]) {
+                if (dados [l] [3] >dados [pos][3]) {
                     pos = l;
                 }
             }
