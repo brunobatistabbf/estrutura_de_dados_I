@@ -8,7 +8,7 @@ public class respostafor428 {
         int codigo;
         int pos = 0;
         int aux;
-        for (l = 0; l < 10; l++) {
+        for (l = 0; l < 2; l++) {
             System.out.println("Digite a matricula no formato aascccnnn: ");
             dados[l][0] = sc.nextInt();
             aux = dados[l][0]/1000000;
@@ -22,7 +22,7 @@ public class respostafor428 {
         }
         System.out.println("Digite o codigo do curso: ");
         codigo = sc.nextInt();
-        for ( l = 0; l < 10; l++) {
+        for ( l = 0; l < 2; l++) {
             if (dados[l][2]==codigo && dados[l][1]==0) {
                 pos = l;
             } else {
