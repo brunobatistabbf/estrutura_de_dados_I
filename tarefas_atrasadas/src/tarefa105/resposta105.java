@@ -36,7 +36,6 @@ public class resposta105 {
             case "RJ":
              System.out.println("Carioca");
                 break;
-
             case "rj":
              System.out.println("Carioca");
                 break;
