@@ -21,6 +21,7 @@ public class respostaswitch {
             break;
     
         default:
+        System.out.println("Insira uma opção valida");
             break;
     }
     sc.close();

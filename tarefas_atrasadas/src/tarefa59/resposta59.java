@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 public class resposta59 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,6 +19,10 @@ public class resposta59 {
         }
         a = 0;
         System.out.println("Com SWITCH");
+        System.out.println("Entre com o primeiro cateto ");
+        b = sc.nextInt();
+        System.out.println("Entre com o segundo cateto");
+        c = sc.nextInt();
 
         switch (a) {
             case 0:
