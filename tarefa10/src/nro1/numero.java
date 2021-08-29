@@ -5,8 +5,8 @@ public class numero {
     String telefone;
     String endereco;
     String cpf;
-    numero proximo;
-    public numero(){
+    Numero proximo;
+    public numero(int id, String sexo, int idade, boolean gestante, boolean lactante, boolean necessidadeEspecial, int prioridade){
         this.nome = null;
         this.cpf = null;
     }

@@ -1,10 +1,10 @@
 public class lista_encadeada {
 
-    numero incial = null;
+    Numero incial = null;
     int tamanho = 0;
 
     public void inseririncial(int nro, String numerome, String telefone, String endereco, String cpf){
-        numero numero = new numero(nro, numerome, telefone, endereco, cpf);
+        Numero numero = new Numero(nro, numerome, telefone, endereco, cpf);
         numero.proximo = incial;
         incial = numero;
         tamanho++;
@@ -21,12 +21,12 @@ public class lista_encadeada {
     }
 
     public void inserirFim(int nro, String numerome, String telefone, String endereco, String cpf){
-        numero numero = new numero(nro, numerome, telefone, endereco, cpf);
+        Numero numero = new Numero(nro, numerome, telefone, endereco, cpf);
         if (incial == null) {
             numero.proximo = null;
             incial = numero;
         }else{
-            numero local = incial;
+            Numero local = incial;
             while (local.proximo != null) {
                 local = local.proximo;
             }
@@ -40,9 +40,9 @@ public class lista_encadeada {
         if (incial == null) {
             return null;
         }
-        numero local = incial;
+        Numero local = incial;
         while (local.proximo != null){
-            numero aux = local;
+            Numero aux = local;
             local = local.proximo;
             if (local.proximo == null) {
                 aux.proximo = null;
@@ -61,11 +61,11 @@ public class lista_encadeada {
         }else if(indice >= tamanho){
             inserirFim(nro, numerome, telefone, endereco, cpf);
         }else{
-            numero local = incial;
+            Numero local = incial;
             for (int i = 0; i < indice - 1; i++) {
                 local = local.proximo;
             }
-            numero numero  = new numero(nro, numerome, telefone, endereco, cpf);
+            Numero numero  = new Numero(nro, numerome, telefone, endereco, cpf);
             numero.proximo = local.proximo;
             local.proximo = numero;
             tamanho++;
@@ -80,7 +80,7 @@ public class lista_encadeada {
         }else if(indice == tamanho -1){
             return retirarFim();
         }
-        numero local = incial;
+        Numero local = incial;
         for (int i = 0; i < indice-1; i++) {
             local = local.proximo;
         }
@@ -91,7 +91,7 @@ public class lista_encadeada {
     }
     public String toString(){
         String str = "";
-        numero local  = incial;
+        Numero local  = incial;
         while (local != null) {
             str += local.nro+ ": "+ local.nome +", cpf: "+local.cpf+", endereço: "+ local.endereco+ "\n";
             local = local.proximo; 
