@@ -120,6 +120,6 @@ public class App {
            roda.retirarIndice(num);
         }
         
-        System.out.println(roda.incial.nro +": "+ roda.incial.nome);
+        System.out.println("Sobrevivente:  " + roda.incial.nro +": "+ roda.incial.nome);
     }
 }

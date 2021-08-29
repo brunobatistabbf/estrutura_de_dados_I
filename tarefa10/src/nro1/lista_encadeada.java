@@ -14,7 +14,7 @@ public class lista_encadeada {
         if (incial == null) {
             return null;
         }
-        String dados = "Numero:"+ incial.nro +", numerome: "+incial.nome +" retirado";
+        String dados = "Numero:"+ incial.nro +", nome: "+incial.nome +" retirado";
         incial = incial.proximo;
         tamanho--;
         return dados;
@@ -47,7 +47,7 @@ public class lista_encadeada {
             if (local.proximo == null) {
                 aux.proximo = null;
                 tamanho--;
-                return "Numero:"+ local.nro +", numerome: "+local.nome +" retirado";
+                return "Numero:"+ local.nro +", nome: "+local.nome +" retirado";
             }
         }
         incial = null;
