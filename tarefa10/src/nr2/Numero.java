@@ -2,6 +2,7 @@
 
 public class Numero {
 
+    public static final String nome = null;
     int id;
     String sexo;
     int idade;
@@ -10,6 +11,7 @@ public class Numero {
     boolean necessidadeEspecial;
     int prioridade =  0;
     Numero proximo;
+    public String nro;
 
     public Numero(int id, String sexo, int idade, boolean gestante, boolean lactante, boolean necessidadeEspecial, int prioridade){
 

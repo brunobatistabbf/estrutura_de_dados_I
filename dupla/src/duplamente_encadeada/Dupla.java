@@ -1,20 +1,20 @@
 
 public class Dupla {
-    Part primeira;
-    Part ultima;
+    Parte primeira;
+    Parte ultima;
     int total = 0;
 
     boolean PosicaoOcupada(int posicao){
         return (posicao >= 0) && (posicao < total);
     }
 
-    Part pegaPart(int posicao){
+    Parte pegaPart(int posicao){
         if (!this.PosicaoOcupada(posicao)) {
             throw new IllegalArgumentException("Posição inexistente");
         
         }else{
         
-            Part atual = primeira;
+            Parte atual = primeira;
             for (int i = 0; i < posicao; i++) {
                 atual = atual.getProxima();
             }
@@ -29,11 +29,11 @@ public class Dupla {
     void Comeco(Object elemento){
       
         if (total == 0) {
-            Part nova = new Part(elemento);
+            Parte nova = new Parte(elemento);
             primeira = nova;
             ultima = nova;
         }else{
-            Part nova =  new Part(primeira, elemento);
+            Parte nova =  new Parte(primeira, elemento);
             primeira.setAnterior(nova);
             primeira = nova;
         }
@@ -45,7 +45,7 @@ public class Dupla {
         if (total == 0) {
             Comeco(elemento);
         }else{
-            Part nova = new Part(elemento);
+            Parte nova = new Parte(elemento);
             ultima.setProxima(nova);
             nova.setAnterior(ultima);
             ultima = nova;
@@ -58,9 +58,9 @@ public class Dupla {
         }else if(posicao == total){
             this.Adiciona(elemento);
         }else{
-            Part anterior = this.pegaPart(posicao-1);
-            Part proxima =  anterior.getProxima();
-            Part nova = new Part(anterior.getProxima(), elemento);
+            Parte anterior = this.pegaPart(posicao-1);
+            Parte proxima =  anterior.getProxima();
+            Parte nova = new Parte(anterior.getProxima(), elemento);
             nova.setAnterior(anterior);
             anterior.setProxima(nova);
             proxima.setAnterior(nova);
@@ -87,7 +87,7 @@ public class Dupla {
             if (total == 1) {
                 RemoveComeco();
             }else{
-                Part penultima = ultima.getAnterior();
+                Parte penultima = ultima.getAnterior();
                 penultima.setProxima(null);
                 ultima = penultima;
                 total--;
@@ -104,9 +104,9 @@ public class Dupla {
             }else if(posicao == total-1){
                 this.RemoveFim();
             }else{
-                Part anterior = pegaPart(posicao - 1);
-                Part atual = anterior.getProxima();
-                Part proxima = atual.getProxima();
+                Parte anterior = pegaPart(posicao - 1);
+                Parte atual = anterior.getProxima();
+                Parte proxima = atual.getProxima();
                 anterior.setProxima(proxima);
                 proxima.setAnterior(anterior);
                 total--;
@@ -115,7 +115,7 @@ public class Dupla {
     }
 
     boolean Contem(Object elemento){
-        Part atual = this.primeira;
+        Parte atual = this.primeira;
         while (atual != null) {
            if (atual.getElemento().equals(elemento)) {
                return true;
@@ -140,7 +140,7 @@ public class Dupla {
             return "Zerado";
         }else{
            
-            Part atual = this.primeira;
+            Parte atual = this.primeira;
             for (int i = 0; i < this.total - 1; i++) {
                
                 System.out.print( "\n " + atual.getElemento());

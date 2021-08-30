@@ -1,37 +1,44 @@
 public class lista_encadeada {
 
-    Numero incial = null;
+    Now incial = null;
     int tamanho = 0;
 
     public void inseririncial(int nro, String numerome, String telefone, String endereco, String cpf){
-        Numero numero = new Numero(nro, numerome, telefone, endereco, cpf);
-        numero.proximo = incial;
-        incial = numero;
+        Now now = new Now(nro, numerome, telefone, endereco, cpf);
+        now.proximo = incial;
+        incial = now;
         tamanho++;
+    }
+
+    public lista_encadeada(Now incial) {
+        this.incial = incial;
+    }
+
+    public lista_encadeada() {
     }
 
     public String retirarincial(){
         if (incial == null) {
             return null;
         }
-        String dados = "Numero:"+ incial.nro +", nome: "+incial.nome +" retirado";
+        String dados = "Now:"+ incial.nro +", nome: "+incial.nome +" retirado";
         incial = incial.proximo;
         tamanho--;
         return dados;
     }
 
     public void inserirFim(int nro, String numerome, String telefone, String endereco, String cpf){
-        Numero numero = new Numero(nro, numerome, telefone, endereco, cpf);
+        Now now = new Now(nro, numerome, telefone, endereco, cpf);
         if (incial == null) {
-            numero.proximo = null;
-            incial = numero;
+            now.proximo = null;
+            incial = now;
         }else{
-            Numero local = incial;
+            Now local = incial;
             while (local.proximo != null) {
                 local = local.proximo;
             }
-            local.proximo = numero;
-            numero.proximo = null;
+            local.proximo = now;
+            now.proximo = null;
         }
         tamanho++;
     }
@@ -40,14 +47,14 @@ public class lista_encadeada {
         if (incial == null) {
             return null;
         }
-        Numero local = incial;
+        Now local = incial;
         while (local.proximo != null){
-            Numero aux = local;
+            Now aux = local;
             local = local.proximo;
             if (local.proximo == null) {
                 aux.proximo = null;
                 tamanho--;
-                return "Numero:"+ local.nro +", nome: "+local.nome +" retirado";
+                return "Now:"+ local.nro +", nome: "+local.nome +" retirado";
             }
         }
         incial = null;
@@ -61,13 +68,13 @@ public class lista_encadeada {
         }else if(indice >= tamanho){
             inserirFim(nro, numerome, telefone, endereco, cpf);
         }else{
-            Numero local = incial;
+            Now local = incial;
             for (int i = 0; i < indice - 1; i++) {
                 local = local.proximo;
             }
-            Numero numero  = new Numero(nro, numerome, telefone, endereco, cpf);
-            numero.proximo = local.proximo;
-            local.proximo = numero;
+            Now now  = new Now(nro, numerome, telefone, endereco, cpf);
+            now.proximo = local.proximo;
+            local.proximo = now;
             tamanho++;
         }
     }
@@ -80,18 +87,18 @@ public class lista_encadeada {
         }else if(indice == tamanho -1){
             return retirarFim();
         }
-        Numero local = incial;
+        Now local = incial;
         for (int i = 0; i < indice-1; i++) {
             local = local.proximo;
         }
-        String info = "Numero:"+ local.proximo.nro +", nome: "+local.proximo.nome +" retirado";
+        String info = "Now:"+ local.proximo.nro +", nome: "+local.proximo.nome +" retirado";
         local.proximo = local.proximo.proximo;
         tamanho--;
         return info;
     }
     public String toString(){
         String str = "";
-        Numero local  = incial;
+        Now local  = incial;
         while (local != null) {
             str += local.nro+ ": "+ local.nome +", cpf: "+local.cpf+", endereço: "+ local.endereco+ "\n";
             local = local.proximo; 
